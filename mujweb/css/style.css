@@ -1,0 +1,229 @@
+/* Základní reset a nastavení */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7;
+    background-color: #f8f9fa; /* Světlejší pozadí */
+    color: #343a40; /* Tmavší text pro lepší kontrast */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 16px;
+}
+
+/* Header a Navigace */
+header {
+    background: #343a40; /* Tmavě šedá */
+    color: #ffffff;
+    padding: 1.5rem 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Přilepený header */
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-weight: 300; /* Lehčí font pro název */
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+header h1 a:hover {
+    color: #adb5bd; /* Světlejší při najetí */
+}
+
+nav ul {
+    list-style: none;
+    padding-top: 1rem;
+}
+
+nav ul li {
+    display: inline-block; /* Změna na inline-block pro lepší práci s paddingem */
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #e9ecef; /* Světlejší barva pro odkazy */
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 8px 15px; /* Přidání paddingu pro větší klikací plochu */
+    border-radius: 5px; /* Zaoblené rohy */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active { /* Předpoklad pro aktivní odkaz (museli byste přidat třídu .active v PHP) */
+    background-color: #495057; /* Tmavší pozadí při najetí/aktivní */
+    color: #ffffff;
+}
+
+/* Hlavní obsah */
+main {
+    flex: 1; /* Aby main vyplnil dostupný prostor a footer byl dole */
+    padding: 30px 20px;
+    max-width: 1100px; /* Širší kontejner */
+    margin: 30px auto;
+    background: #ffffff;
+    border-radius: 8px; /* Zaoblené rohy */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Výraznější stín */
+}
+
+h2 {
+    color: #007bff; /* Modrá pro hlavní nadpisy sekcí */
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+h3 {
+    color: #343a40;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* Tabulky */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-radius: 5px; /* Zaoblení i pro tabulku */
+    overflow: hidden; /* Aby zaoblení fungovalo s th */
+}
+
+th, td {
+    border: 1px solid #e9ecef; /* Světlejší linky */
+    padding: 12px 15px; /* Více paddingu */
+    text-align: left;
+    vertical-align: middle;
+}
+
+th {
+    background-color: #e9ecef; /* Světle šedé pozadí pro hlavičku tabulky */
+    color: #495057;
+    font-weight: 600; /* Tučnější text v hlavičce */
+    text-transform: uppercase; /* Velká písmena */
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+tr {
+    transition: background-color 0.2s ease;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa; /* Střídání barev řádků */
+}
+
+tr:hover {
+    background-color: #d1ecf1; /* Zvýraznění řádku při najetí myší */
+}
+
+/* Úvodní sekce na hlavní stránce */
+.welcome-section {
+    padding: 25px;
+    background-color: #eef7ff; /* Světle modré pozadí */
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border-left: 5px solid #007bff; /* Modrý levý okraj */
+}
+
+.welcome-section h2 {
+    border-bottom: none; /* Odebrání spodní linky pro tento specifický nadpis */
+    margin-bottom: 10px;
+}
+
+/* Seznamy (např. na hlavní stránce) */
+main ul {
+    list-style: none; /* Odebrání odrážek */
+    padding-left: 0;
+}
+
+main ul li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #dee2e6; /* Jemné oddělovače */
+}
+
+main ul li:last-child {
+    border-bottom: none;
+}
+
+main ul li a {
+    color: #0056b3; /* Tmavší modrá pro odkazy v obsahu */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+main ul li a:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #343a40; /* Stejná jako header */
+    color: #adb5bd; /* Světlejší text ve footeru */
+    margin-top: auto; /* Zajistí, že footer je vždy dole */
+    font-size: 0.9rem;
+}
+
+/* Responzivita - jednoduchý příklad */
+@media (max-width: 768px) {
+    header h1 a {
+        font-size: 2rem;
+    }
+    nav ul li {
+        display: block; /* Odkazy pod sebe na menších obrazovkách */
+        margin: 10px 0;
+    }
+    main {
+        margin: 20px 10px;
+        padding: 20px 15px;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
+    /* Pro tabulky na menších obrazovkách může být nutné složitější řešení
+       pro lepší čitelnost, např. horizontální scroll nebo transformace do karet.
+       Toto je jen základní úprava fontu. */
+    table, th, td {
+        font-size: 0.9rem;
+    }
+    th, td {
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    header h1 a {
+        font-size: 1.8rem;
+    }
+    main {
+        margin: 15px 5px;
+        padding: 15px 10px;
+    }
+    h2 {
+        font-size: 1.6rem;
+    }
+}
