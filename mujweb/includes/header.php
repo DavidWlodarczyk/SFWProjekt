@@ -13,7 +13,7 @@
 <body>
     <header>
         <h1><a href="index.php">Databáze Hlášek</a></h1>
-        <img src="https://img.csfd.cz/documents/marketing/logos/logo-white-red/logo-white-red.svg" width="20%" alt="Partner webu" class="ora, vycentrování, žádné odsazení dole (pokud header má padding-bottom) */
+        <img src="https://img.csfd.cz/documents/marketing/logos/logo-white-red/logo-white-red.svg" width="10%" alt="Partner webu" class="ora, vycentrování, žádné odsazení dole (pokud header má padding-bottom) */
 footer-image">
         <nav>
             <ul>

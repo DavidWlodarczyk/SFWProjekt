@@ -1,6 +1,6 @@
     </main>
     <footer>
-        <p>© <?php echo date("Y"); ?> Databáze Hlášek. Vytvořeno s láskou.</p>
+        <p>© 2025 Databáze Hlášek. Vytvořeno s láskou.</p>
     </footer>
     <?php
     // Uzavření připojení k databázi pro mysqli
